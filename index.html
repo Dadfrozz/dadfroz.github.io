@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Free Fire Championship 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0b0b0f;
+    color: #fff;
+}
+header {
+    background: linear-gradient(90deg,#000,#1a1a1a);
+    padding: 80px 20px;
+    text-align: center;
+}
+header h1 { color: #ff3c00; font-size: 40px; }
+
+section { padding: 50px 20px; text-align: center; }
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ff3c00;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #14141a;
+    padding: 25px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,60,0,0.3);
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { background: #1ebe5d; }
+
+footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔥 Elite Free Fire Championship 🔥</h1>
+    <p>Entry Fee ₹10 | Win ₹150</p>
+</header>
+
+<section>
+    <h2 class="section-title">Tournament Info</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Game Mode</h3>
+            <p>Squad (4 Players)</p>
+        </div>
+        <div class="card">
+            <h3>Entry Fee</h3>
+            <p>₹10 Per Team</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Prize Distribution</h2>
+    <div class="cards">
+        <div class="card"><h3>🥇 1st</h3><p>₹150</p></div>
+        <div class="card"><h3>🥈 2nd</h3><p>₹100</p></div>
+        <div class="card"><h3>🥉 3rd</h3><p>₹50</p></div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Team Registration</h2>
+    <form onsubmit="sendToWhatsApp(); return false;">
+        <input type="text" id="team" placeholder="Team Name" required>
+        <input type="text" id="captain" placeholder="Captain Name" required>
+        <input type="text" id="uid" placeholder="Free Fire UID" required>
+        <input type="tel" id="phone" placeholder="Contact Number" required>
+        <select id="region" required>
+            <option value="">Select Region</option>
+            <option>India</option>
+            <option>Bangladesh</option>
+            <option>Nepal</option>
+        </select>
+        <button type="submit">Submit Registration via WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+© 2026 Elite Free Fire Championship | All Rights Reserved
+</footer>
+
+<script>
+function sendToWhatsApp() {
+    var team = document.getElementById("team").value;
+    var captain = document.getElementById("captain").value;
+    var uid = document.getElementById("uid").value;
+    var phone = document.getElementById("phone").value;
+    var region = document.getElementById("region").value;
+
+    var message = "🔥 *Free Fire Tournament Registration* 🔥%0A%0A"
+        + "Team Name: " + team + "%0A"
+        + "Captain Name: " + captain + "%0A"
+        + "UID: " + uid + "%0A"
+        + "Contact: " + phone + "%0A"
+        + "Region: " + region;
+
+    var whatsappURL = "https://wa.me/919226577892?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
