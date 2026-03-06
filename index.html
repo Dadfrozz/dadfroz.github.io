@@ -3,152 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Free Fire Championship 2026</title>
+<title>FREE FIRE TOURNAMENT</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-    font-family: 'Orbitron', sans-serif;
-    background: #0b0b0f;
-    color: #fff;
-}
-header {
-    background: linear-gradient(90deg,#000,#1a1a1a);
-    padding: 80px 20px;
-    text-align: center;
-}
-header h1 { color: #ff3c00; font-size: 40px; }
-
-section { padding: 50px 20px; text-align: center; }
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #ff3c00;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Orbitron',sans-serif;
+color:#00f5ff;
+background:black;
+overflow-x:hidden;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+flex-direction:column;
 }
 
-.card {
-    background: #14141a;
-    padding: 25px;
-    width: 280px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255,60,0,0.3);
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
-form {
-    max-width: 500px;
-    margin: auto;
+.notice{
+background:#a020f0;
+color:white;
+padding:12px;
+text-align:center;
+font-weight:bold;
+font-size:14px;
 }
 
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
+section{
+padding:50px 15px;
+text-align:center;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background: #25D366;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
+.main-title{
+font-family:'Bebas Neue', sans-serif;
+font-size:60px;
+letter-spacing:4px;
+background:linear-gradient(90deg,#ff0000,#ff7300,#fffb00,#ff00c8,#ff0000);
+background-size:400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:gradientMove 6s linear infinite;
 }
 
-button:hover { background: #1ebe5d; }
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:400%}
+}
 
-footer {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
+.section-title{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:rgba(0,0,0,0.9);
+padding:20px;
+width:280px;
+border-radius:12px;
+border:1px solid #a020f0;
+box-shadow:0 0 20px #a020f0;
+}
+
+.highlight{
+color:#00ff88;
+font-size:18px;
+margin-top:15px;
+font-weight:bold;
+}
+
+form{max-width:400px;margin:auto;}
+
+input{
+width:100%;
+padding:14px;
+margin:12px 0;
+border:1px solid #a020f0;
+background:black;
+color:#00f5ff;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#a020f0;
+color:white;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#00f5ff;
+color:black;
+}
+
+.players{
+max-width:600px;
+margin:auto;
+text-align:left;
+margin-top:30px;
+}
+
+.player{
+background:#111;
+border:1px solid #a020f0;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+}
+
+footer{
+padding:20px;
+font-size:12px;
+}
+
+@media(max-width:600px){
+.main-title{font-size:36px;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🔥 Elite Free Fire Championship 🔥</h1>
-    <p>Entry Fee ₹10 | Win ₹150</p>
-</header>
+<div id="loader">
+<h1>Loading Tournament...</h1>
+</div>
+
+<canvas id="matrix"></canvas>
+
+<div class="notice">
+⚠ INDIA SERVER ONLY ⚠
+</div>
 
 <section>
-    <h2 class="section-title">Tournament Info</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Game Mode</h3>
-            <p>Squad (4 Players)</p>
-        </div>
-        <div class="card">
-            <h3>Entry Fee</h3>
-            <p>₹10 Per Team</p>
-        </div>
-    </div>
+<h1 class="main-title">🔥 FREE FIRE TOURNAMENT 🔥</h1>
+<p style="margin-top:20px;">Entry Fee ₹10 Per Player</p>
+<p class="highlight">💰 ₹3 PER KILL BONUS 💰</p>
 </section>
 
 <section>
-    <h2 class="section-title">Prize Distribution</h2>
-    <div class="cards">
-        <div class="card"><h3>🥇 1st</h3><p>₹150</p></div>
-        <div class="card"><h3>🥈 2nd</h3><p>₹100</p></div>
-        <div class="card"><h3>🥉 3rd</h3><p>₹50</p></div>
-    </div>
+<h2 class="section-title">Prize Distribution</h2>
+
+<div class="cards">
+<div class="card"><h3>🥇 1st Prize</h3><p>₹100</p></div>
+<div class="card"><h3>🥈 2nd Prize</h3><p>₹50</p></div>
+<div class="card"><h3>🥉 3rd Prize</h3><p>₹20</p></div>
+</div>
+
+<p class="highlight">🔥 Extra ₹3 for Every Kill 🔥</p>
 </section>
 
 <section>
-    <h2 class="section-title">Team Registration</h2>
-    <form onsubmit="sendToWhatsApp(); return false;">
-        <input type="text" id="team" placeholder="Team Name" required>
-        <input type="text" id="captain" placeholder="Captain Name" required>
-        <input type="text" id="uid" placeholder="Free Fire UID" required>
-        <input type="tel" id="phone" placeholder="Contact Number" required>
-        <select id="region" required>
-            <option value="">Select Region</option>
-            <option>India</option>
-            <option>Bangladesh</option>
-            <option>Nepal</option>
-        </select>
-        <button type="submit">Submit Registration via WhatsApp</button>
-    </form>
+
+<h2 class="section-title">Player Registration</h2>
+
+<form onsubmit="registerPlayer(); return false;">
+
+<input type="text" id="player" placeholder="Player UID Name" required>
+<input type="text" id="uid" placeholder="Free Fire UID" required>
+<input type="tel" id="phone" placeholder="Contact Number" required>
+
+<button type="submit">Register via WhatsApp</button>
+
+<a href="https://chat.whatsapp.com/KIocVh3FXgJFpGonpMo8cE?mode=gi_t" target="_blank">
+<button type="button" style="background:#25D366">Join WhatsApp Group</button>
+</a>
+
+</form>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Registered Players</h2>
+
+<div class="players" id="playersList"></div>
+
 </section>
 
 <footer>
-© 2026 Elite Free Fire Championship | All Rights Reserved
+© 2026 FREE FIRE TOURNAMENT<br>
+Not affiliated with Garena.
 </footer>
 
 <script>
-function sendToWhatsApp() {
-    var team = document.getElementById("team").value;
-    var captain = document.getElementById("captain").value;
-    var uid = document.getElementById("uid").value;
-    var phone = document.getElementById("phone").value;
-    var region = document.getElementById("region").value;
 
-    var message = "🔥 *Free Fire Tournament Registration* 🔥%0A%0A"
-        + "Team Name: " + team + "%0A"
-        + "Captain Name: " + captain + "%0A"
-        + "UID: " + uid + "%0A"
-        + "Contact: " + phone + "%0A"
-        + "Region: " + region;
-
-    var whatsappURL = "https://wa.me/919226577892?text=" + message;
-
-    window.open(whatsappURL, "_blank");
+window.onload=function(){
+setTimeout(()=>{document.getElementById("loader").style.display="none";},1500);
+loadPlayers();
 }
+
+function registerPlayer(){
+
+var name=document.getElementById("player").value;
+var uid=document.getElementById("uid").value;
+var phone=document.getElementById("phone").value;
+
+if(!/^[0-9]{8,13}$/.test(uid)){
+alert("Enter valid Free Fire UID");
+return;
+}
+
+if(!/^[6-9]\d{9}$/.test(phone)){
+alert("Enter valid Indian mobile number");
+return;
+}
+
+var message =
+"🔥 FREE FIRE TOURNAMENT 🔥\n\n"+
+"Player UID Name: "+name+"\n"+
+"UID: "+uid+"\n"+
+"Contact: "+phone;
+
+var encodedMessage=encodeURIComponent(message);
+
+window.open("https://wa.me/919226577892?text="+encodedMessage,"_blank");
+
+var players=JSON.parse(localStorage.getItem("players")||"[]");
+
+players.push({name,uid});
+
+localStorage.setItem("players",JSON.stringify(players));
+
+loadPlayers();
+
+document.querySelector("form").reset();
+}
+
+function loadPlayers(){
+
+var players=JSON.parse(localStorage.getItem("players")||"[]");
+
+var list=document.getElementById("playersList");
+
+list.innerHTML="";
+
+players.forEach(p=>{
+list.innerHTML+=`
+<div class="player">
+<strong>Player UID Name:</strong> ${p.name}<br>
+<strong>UID:</strong> ${p.uid}
+</div>
+`;
+});
+}
+
+var canvas=document.getElementById("matrix");
+var ctx=canvas.getContext("2d");
+
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+
+var letters="01";
+var fontSize=14;
+var columns=canvas.width/fontSize;
+var drops=[];
+
+for(var x=0;x<columns;x++) drops[x]=1;
+
+function draw(){
+ctx.fillStyle="rgba(0,0,0,0.07)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00f5ff";
+ctx.font=fontSize+"px monospace";
+
+for(var i=0;i<drops.length;i++){
+var text=letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+}
+}
+
+setInterval(draw,33);
+
 </script>
 
 </body>
